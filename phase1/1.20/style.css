@@ -1,0 +1,40 @@
+/* Style for all the tags that I will be using */
+h1, h2, h3, h4, h5, h6, p, div
+{
+    text-align: center;
+    font-family: Tahoma;
+}
+
+/* Put everything in a box, padding it nicely */
+body
+{
+    border-style: solid;
+    padding: 20px;
+    border-width: 5px;
+    border-color: blue;
+    background-color: gray;
+}
+
+/* Styling for each of the 3 parts of the page (header, main-content and footer */
+.header
+{
+    border-style: solid;
+    padding: 20px;
+    border-width: 5px;
+    text-decoration: underline;
+}
+
+.main-content
+{
+    border-style: solid;
+    padding: 20px;
+    border-width: 5px;
+}
+
+.footer
+{
+    border-style: solid;
+    padding: 20px;
+    border-width: 5px;
+    font-style: italic;
+}

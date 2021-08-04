@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js"></script>
+    <title>Add New Project</title>
+</head>
+
+    <body>
+        <h2>Add New Project</h2>
+        <br>
+
+        <form onsubmit="return false">
+            <label>Client Name</label>
+            <input id="clientName" type="text">
+            <br>
+            <br>
+
+            <label>Project Name</label>
+            <input id="projectName" type="text">
+            <br>
+            <br>
+
+            <label>Budget</label>
+            <input id="budget" type="text">
+            <br>
+            <br>
+
+            <input type="submit" value="Add" onclick=add()>
+            <input type="reset" value="Clear">
+        </form>
+
+        <br><hr>
+        <form action="teamBudget.html">
+            <input type="submit" value="Back"/>
+        </form>
+    </body>
+
+</html>

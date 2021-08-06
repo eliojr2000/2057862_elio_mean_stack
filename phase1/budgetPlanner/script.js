@@ -11,9 +11,9 @@ function add()
     */
     
     //Grab all the information from the page
-    var cName = document.getElementById("clientName");
-    var pName = document.getElementById("projectName");
-    var budget = document.getElementById("budget");
+    let cName = document.getElementById("clientName");
+    let pName = document.getElementById("projectName");
+    let budget = document.getElementById("budget");
 
     //Check if the values are valid
     if(cName.value == "" || pName.value == "" || budget.value == "")
@@ -57,8 +57,6 @@ function add()
 
     //Add newly created JSON to the JSON Object that contains all data (base)
     base.projects[index] = newEntry;
-    
-    console.log(JSON.stringify(base));
 
     //Save the modified JSON Object to the localStorage along with the index
     localStorage.setItem("base", JSON.stringify(base));

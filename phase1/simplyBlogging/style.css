@@ -1,5 +1,26 @@
-#myCards
+body
 {
-    width: 18rem;
-    margin: 5rem;
+    background-image: url("https://wallpapercave.com/wp/wp2732950.gif");
+}
+.formCard
+{
+    width: 30rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.blogCard
+{
+    width: 25rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+#cardTemplate
+{
+    display: none;
 }

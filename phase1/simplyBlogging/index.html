@@ -6,6 +6,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+        <script src="script.js"></script>
+        <link rel="stylesheet" href="style.css">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
         <title>Simply Blogging</title>
     </head>
@@ -40,19 +42,45 @@
             </div>
           </nav>
 
-          <div id="myCards" class="card">
-            <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">Title</label>
-                <input class="form-control" id="exampleFormControlInput1">
+          <div class="card formCard bg-dark bg-gradient border-light text-white">
+            <div class="card-header">
+              <h4 class="card-title" style="text-align: center; font-weight: bold;">
+                Add Post
+              </h4>
             </div>
-            <div class="mb-3">
-                <label for="exampleFormControlTextarea1" class="form-label">Article</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            <div class="card-body">
+              <div class="mb-3">
+                  <label for="exampleFormControlInput1" class="form-label">Title</label>
+                  <input id="title" class="form-control" id="exampleFormControlInput1">
+              </div>
+              <div class="mb-3">
+                  <label for="exampleFormControlTextarea1" class="form-label">Article</label>
+                  <textarea id="article" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+              </div>
+              <div class="mb-3">
+                  <label for="exampleFormControlInput1" class="form-label">Add Image URL</label>
+                  <input id="imgurl" class="form-control" id="exampleFormControlInput1">
+              </div>
             </div>
-            <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">Add Image URL</label>
-                <input class="form-control" id="exampleFormControlInput1">
+            <div class="card-footer">
+              <button type="button" class="btn btn-primary" onclick=submit()>Submit</button>
+              <button type="button" class="btn btn-primary" onclick=clearAll() style="margin-right: auto;">Delete localStorage</button>
             </div>
+          </div>
+
+
+          <div id="cardsGrid" class="row row-cols-1 row-cols-md-2 g-4" onload=updateCards()>
+            
+          </div>
+
+          <div id="cardTemplate" class="card blogCard col bg-dark bg-gradient border-dark text-white">
+            <h4 class="card-header" style="text-align: center; font-weight: bold;">
+              Sample Title
+            </h4>
+            <p class="card-body">
+              Sample Article Sample Article Sample Article Sample Article Sample Article Sample Article Sample Article Sample Article 
+            </p>
+            <img class="card-image-bottom img-responsive" src="https://timesofindia.indiatimes.com/photo/67586673.cms" style="display: block;">
           </div>
     </body>
 </html>

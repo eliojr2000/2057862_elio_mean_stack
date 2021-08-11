@@ -8,9 +8,52 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
         <script src="script.js"></script>
         <link rel="stylesheet" href="style.css">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
-        <title>Simply Blogging</title>
+        <title>Store</title>
     </head>
     <body>
+        <h2>Shopping Cart</h2>
+        <div id="nav">
+            <p id="cartSize">Cart Size: 0</p>
+            <br>
+            <form action="cart.html">
+                <input type="submit" value="Checkout"/>
+            </form>
+        </div>
+        <br>
+        <table id="shop">
+            <tr>
+                <td>
+                    <div class="tableItem">
+                        <p>Name: iPhone 12</p>
+                        <p>Price: $1,000</p>
+                        <div class="addButton"><button class="addButton" type="button" onclick="addItem('iPhone 12', 1000)">Add</button></div>
+                    </div>
+                </td>
+                <td>
+                    <div class="tableItem">
+                        <p>Name: Banana</p>
+                        <p>Price: $1</p>
+                        <div class="addButton"><button class="addButton" type="button" onclick="addItem('Banana', 1)">Add</button></div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="tableItem">
+                        <p>Name: Hot Pockets</p>
+                        <p>Price: $20</p>
+                        <div class="addButton"><button class="addButton" type="button" onclick="addItem('Hot Pockets', 20)">Add</button></div>
+                    </div>
+                </td>
+                <td>
+                    <div class="tableItem">
+                        <p>Name: Coke</p>
+                        <p>Price: $2</p>
+                        <div class="addButton"><button type="button" onclick="addItem('Coke', 2)">Add</button></div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <hr>
     </body>
 </html>

@@ -1,0 +1,46 @@
+h2
+{
+    text-align: center;
+}
+
+#nav
+{
+    padding-left: 2rem;
+    text-decoration: underline;
+}
+
+table, td
+{
+    padding: 1rem;
+}
+
+.tableItem
+{
+    border: 2px solid black;
+}
+
+.tableItem *
+{
+    padding: 1rem;
+}
+
+.addButton
+{
+    text-align: center;
+}
+
+#checkoutTable *
+{
+    padding: 1rem;
+    border: 2px solid black;
+}
+
+#checkoutTable, #clearButton
+{
+    padding-left: 2rem;
+}
+
+#emptyCartMessage
+{
+    padding-left: 2rem;
+}

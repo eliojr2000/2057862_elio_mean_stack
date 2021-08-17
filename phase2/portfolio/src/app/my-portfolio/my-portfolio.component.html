@@ -1,0 +1,36 @@
+<div>
+    <h2>My Portfolio</h2>
+    Welcome, {{getName()}} | <input type="button" value="Log Off" (click)="logOff()">
+    <hr>
+    <h3>Add New Contact</h3>
+    Name: <input class="contactForm" type="text" #name>
+    <br>
+    Phone Number: <input class="contactForm" type="text" #number>
+    <br>
+    <input type="button" value="Save Contact" (click)="addContact(name.value, number.value)">
+    <div *ngIf="invalidContact">You must fill out both information fields.</div>
+    <div *ngIf="duplicateContact">That contact name already exists! Delete the current one if you want to update the phone number.</div>
+    <br>
+    <br>
+    <h3>Contacts List</h3>
+
+    <table border="1">
+        <tr>
+            <td>
+                Name
+            </td>
+            <td>
+                Phone Number
+            </td>
+        </tr>
+        <tr *ngFor="let contact of contactList">
+            <td>
+                {{contact.name}}
+            </td>
+            <td>
+                {{contact.phone}}
+                <input type="button" value="X" (click)="deleteContact(contact)">
+            </td>
+        </tr>
+    </table>
+</div>

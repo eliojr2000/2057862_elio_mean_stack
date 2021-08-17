@@ -1,0 +1,11 @@
+<div>
+    <h2>Login</h2>
+    User Name: <input type="text" #userName>
+    <br>
+    Password: <input type="text" #password>
+    <br>
+    <input type="button" value="Login" (click)="login(userName.value, password.value)">
+    <br>
+    <input type="button" value="Sign Up" (click)="signUp()">
+    <div *ngIf="failedLogin">Login failed! Try again or register if you haven't.</div>
+</div>

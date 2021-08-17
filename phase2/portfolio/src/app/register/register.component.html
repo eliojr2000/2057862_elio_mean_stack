@@ -1,0 +1,12 @@
+<div>
+    <h2>Register</h2>
+    User Name: <input type="text" #userName>
+    <br>
+    Password: <input type="text" #password>
+    <br>
+    <input type="button" value="Register" (click)="register(userName.value, password.value)">
+    <br>
+    <input type="button" value="Back to Login" (click)="back()">
+    <div *ngIf="failedRegister">This username is already taken.</div>
+    <div *ngIf="fieldBlank">You must fill out all the fields.</div>
+</div>

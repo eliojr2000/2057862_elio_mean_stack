@@ -1,0 +1,29 @@
+[
+    {
+        "number": 1,
+        "question": "What is the capital of France?",
+        "a": "Paris",
+        "b": "Quito",
+        "c": "Madrid",
+        "d": "Rome",
+        "correct": "a"
+    },
+    {
+        "number": 2,
+        "question": "What is the capital of Italy?",
+        "a": "Quito",
+        "b": "Madrid",
+        "c": "Paris",
+        "d": "Rome",
+        "correct": "d"
+    },
+    {
+        "number": 3,
+        "question": "What is the capital of Spain?",
+        "a": "Paris",
+        "b": "Rome",
+        "c": "Madrid",
+        "d": "Quito",
+        "correct": "c"
+    }
+]

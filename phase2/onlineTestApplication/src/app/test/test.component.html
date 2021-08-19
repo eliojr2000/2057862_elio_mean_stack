@@ -1,0 +1,36 @@
+<div id="all">
+    <h2>Test:</h2>
+
+    <div *ngFor="let q of ser.questions">
+        <h4>Question #{{q.number}}</h4>
+        <p>{{q.question}}</p>
+        <div class="form-check">
+            <input class="form-check-input onlineTestQuestion" type="radio" name={{q.number}} id={{q.number}}ChoiceA>
+            <label class="form-check-label" for={{q.number}}ChoiceA id={{q.number}}ChoiceALabel>
+                A. {{q.a}}
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input onlineTestQuestion" type="radio" name={{q.number}} id={{q.number}}ChoiceB>
+            <label class="form-check-label" for={{q.number}}ChoiceB id={{q.number}}ChoiceBLabel>
+                B. {{q.b}}
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input onlineTestQuestion" type="radio" name={{q.number}} id={{q.number}}ChoiceC>
+            <label class="form-check-label" for={{q.number}}ChoiceC id={{q.number}}ChoiceCLabel>
+                C. {{q.c}}
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input onlineTestQuestion" type="radio" name={{q.number}} id={{q.number}}ChoiceD>
+            <label class="form-check-label" for={{q.number}}ChoiceD id={{q.number}}ChoiceDLabel>
+                D. {{q.d}}
+            </label>
+        </div>
+        <br>
+    </div>
+    <input type="button" value="Submit Test" (click)="onSubmit()">
+    <hr>
+    <input type="button" value="Restart Test" (click)="restart()">
+</div>

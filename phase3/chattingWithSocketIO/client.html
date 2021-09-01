@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat with Server</title>
+    <script type="text/JavaScript">
+
+        let ws = new WebSocket("ws://localhost:9090");
+    
+        function info()
+        {
+            let name = document.getElementById("name").value;
+            let msg = document.getElementById("message").value;
+            ws.send("Hello, " + name);
+            ws.send("Client " + msg);
+            document.getElementById("name").value = "";
+            document.getElementById("message").value = "";
+        }
+
+        //open the connection 
+        ws.onopen= ()=>
+        {
+            // send data to web socket server application
+            ws.send("Client has connected.");
+        }
+
+        // receive the message from server application 
+        ws.onmessage = (msg)=>
+        {
+            document.getElementById("serverMessage").innerHTML = "Server Message: " + msg.data;
+        }
+    </script>
+</head>
+<body>
+    <h2>Web Socket Program</h2>
+    Name: <input type="text" id="name"/><br/>
+    Message: <input type="text" id="message"/><br/>
+    <input type="button" value="Send" onclick="info()"/>
+    <div id="serverMessage">
+
+    </div>
+</body>
+</html>

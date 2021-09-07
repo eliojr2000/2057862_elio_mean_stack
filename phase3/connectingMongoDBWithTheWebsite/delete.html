@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        var socket = io();
+
+        socket.on("status", (msg) =>
+        {
+            document.getElementById("status").innerHTML = msg;
+        });
+
+        function deleteCourse()
+        {
+            // Get data from page
+            let courseId = document.getElementById("courseId").value;
+
+            // Make JSON of the data
+            let course =
+            {
+                _id: courseId
+            };
+
+            // Check that all of the data is valid
+            if(course._id == "")
+            { document.getElementById("status").innerHTML = "Field is empty!"; return;}
+
+            // Reset text fields
+            document.getElementById("courseId").value = "";
+
+            // Send the data
+            socket.emit("deleteCourse", course);
+        }
+    </script>
+    <title>Delete Course</title>
+</head>
+<body>
+    <h2>Delete Course</h2> 
+    <label>Course ID:</label>
+    <input type="text" id="courseId">
+    <br>
+    <button type="button" onclick="deleteCourse()">Submit</button>
+    <p id="status"></p>
+    <hr>
+    <a href="/">Go Back</a>
+</body>

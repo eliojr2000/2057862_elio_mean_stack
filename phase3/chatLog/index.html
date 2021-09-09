@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        var socket = io();
+
+        socket.on("status", (msg) =>
+        {
+            document.getElementById("status").innerHTML = msg;
+        });
+
+        function sendMsg()
+        {
+            // Get data from page
+            let name = document.getElementById("name").value;
+            let msg = document.getElementById("msg").value;
+
+            // Make JSON of the data
+            let message =
+            {
+                name: name,
+                message: msg
+            };
+
+            // Check that all of the data is valid
+            if(name == "" ||
+                msg.courseName == "")
+            { document.getElementById("status").innerHTML = "One of the fields is empty!"; return;}
+
+            // Reset text fields
+            document.getElementById("name").value = "";
+            document.getElementById("msg").value = "";
+
+            // Send the data
+            socket.emit("saveMessage", message);
+        }
+    </script>
+    <title>New Message</title>
+</head>
+<body>
+    <h2>Chatlog</h2>
+    <label>Name:</label>
+    <input type="text" id="name">
+    <br>
+    <br>
+    <label>Message:</label>
+    <textarea rows="3" id="msg"></textarea>
+    <br>
+    <input type="button" value="Send" onclick="sendMsg()">
+    <br>
+    <div id="status"></div>
+</body>
